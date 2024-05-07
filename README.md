@@ -1,0 +1,2 @@
+# HarmonyOsDataStore
+HarmonyOsDataStore是一个用于数据存储的工具库，支持用户首选项、分布式数据库、关系型数据库、让数据存储使用变得无比的简单。
