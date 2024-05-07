@@ -1,0 +1,13 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@abner/refresh": "^1.0.3",
+    "@abner/datastore": "file:libs/datastore-1.0.0.har"
+  }
+}
+
