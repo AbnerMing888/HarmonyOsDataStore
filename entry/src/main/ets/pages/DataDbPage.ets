@@ -3,6 +3,7 @@ import { DbUtil } from '@abner/datastore';
 import promptAction from '@ohos.promptAction';
 import { ValuesBucket } from '@ohos.data.ValuesBucket';
 import relationalStore from '@ohos.data.relationalStore';
+import { BusinessError } from '@ohos.base';
 
 /**
  * AUTHOR:AbnerMing
@@ -50,13 +51,10 @@ struct DataDbPage {
 
         DbUtil.getInstance().query(predicates, (resultSet: relationalStore.ResultSet) => {
           // resultSet是一个数据集合的游标，默认指向第-1个记录，有效的数据从0开始。
-
           while (resultSet.goToNextRow()) {
-            console.error("=========" + JSON.stringify(resultSet.getRow()))
             const id = resultSet.getLong(resultSet.getColumnIndex("id"));
             const name = resultSet.getString(resultSet.getColumnIndex("name"));
             const age = resultSet.getLong(resultSet.getColumnIndex("age"));
-            console.error("========" + id + "=====" + name + "====" + age)
           }
         })
 
@@ -66,7 +64,13 @@ struct DataDbPage {
         let deleteRdbPredicates = new relationalStore.RdbPredicates("abner_ta");
         deleteRdbPredicates.equalTo("id", 1);
 
-        DbUtil.getInstance().delete(deleteRdbPredicates)
+        DbUtil.getInstance().delete(deleteRdbPredicates,
+          (rows: number)=>{
+            //成功
+          },
+          (err: BusinessError)=>{
+            //失败
+        })
 
         break;
       case 4: //修改
