@@ -64,6 +64,7 @@ struct DataDbBeanPage {
           .filterRdbPredicates({ equalTo: { "id": 2 } })
           .deleteBean("abner_ming")
 
+
         break;
       case 5: //修改
 

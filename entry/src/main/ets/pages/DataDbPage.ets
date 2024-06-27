@@ -14,7 +14,7 @@ import { BusinessError } from '@ohos.base';
 @Component
 struct DataDbPage {
   private mItems = [
-    "创建表", "存储", "获取", "删除", "修改"
+    "创建表", "存储", "获取", "删除", "修改", "数据库表是否存在"
   ];
 
   @Builder
@@ -33,10 +33,8 @@ struct DataDbPage {
   private clickItem(index: number) {
     switch (index) {
       case 0: //创建数据库表
-
         DbUtil.getInstance()
           .executeSql("CREATE TABLE abner_ta(id INTEGER PRIMARY KEY AUTOINCREMENT,name VARCHAR(50),age INT)")
-
         break;
       case 1: //存储
         const valueBucket1: ValuesBucket = {
@@ -55,6 +53,7 @@ struct DataDbPage {
             const id = resultSet.getLong(resultSet.getColumnIndex("id"));
             const name = resultSet.getString(resultSet.getColumnIndex("name"));
             const age = resultSet.getLong(resultSet.getColumnIndex("age"));
+            console.log("=========" + name)
           }
         })
 
@@ -65,12 +64,12 @@ struct DataDbPage {
         deleteRdbPredicates.equalTo("id", 1);
 
         DbUtil.getInstance().delete(deleteRdbPredicates,
-          (rows: number)=>{
+          (rows: number) => {
             //成功
           },
-          (err: BusinessError)=>{
+          (err: BusinessError) => {
             //失败
-        })
+          })
 
         break;
       case 4: //修改
@@ -85,6 +84,12 @@ struct DataDbPage {
 
         DbUtil.getInstance().update(upDataRdbPredicates, valueBucket)
         break;
+
+      case 5: //数据库表是否存在
+        DbUtil.getInstance().isDbTableExist("abner_ta", (isSuccess: boolean) => {
+          console.log("=================" + isSuccess)
+        })
+        break
     }
   }
 

@@ -12,7 +12,7 @@ HarmonyOsDataStore是一个用于数据存储的工具库，支持用户首选�
 
 ## 开发环境
 
-DevEco Studio NEXT Developer Beta1,Build Version: 5.0.3.100
+DevEco Studio NEXT Developer Beta1,Build Version: 5.0.3.200
 
 Api版本：**11**
 
@@ -35,14 +35,14 @@ ohpm install @abner/datastore
 方式二：在工程的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/datastore": "^1.0.0"}
+"dependencies": { "@abner/datastore": "^1.0.1"}
 ```
 
 <p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/datastore/datastore_001.png" width="300"></p>
 
 ### 2、本地静态共享包har包使用【不推荐】
 
-<p>首先，下载har包，<a href="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/datastore/datastore-1.0.0.har">点击下载</a></p>
+<p>首先，下载har包，<a href="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/datastore/datastore-1.0.1.har">点击下载</a></p>
 <p>下载之后，把har包复制项目中，目录自己创建，如下，我创建了一个libs目录，复制进去</p>
 <p><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/datastore/datastore_002.png"></p>
 <p>引入之后，进行同步项目，点击Sync Now即可，当然了你也可以，将鼠标放置在报错处会出现提示，在提示框中点击Run 'ohpm install'。</p>

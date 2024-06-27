@@ -6,8 +6,8 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@abner/refresh": "^1.0.3",
-    "@abner/datastore": "file:libs/datastore-1.0.0.har"
+    "@abner/refresh": "^1.1.8",
+    "@abner/datastore": "file:./libs/datastore-1.0.1.har"
   }
 }
 
