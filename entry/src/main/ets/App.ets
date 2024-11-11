@@ -5,7 +5,11 @@ export default class App extends AbilityStage {
   onCreate() {
     DataStoreUtil.init(this.context, ["ming"]);
 
-    DataKvUtil.getInstance().init(this.context, "com.gwm.tool")
+    DataKvUtil.getInstance()
+      .initSuccess(() => {
+        console.log("===========初始化成功")
+      })
+      .init(this.context, "com.gwm.tool")
 
     //初始化关系型数据库
     DbUtil.getInstance().init(this.context)

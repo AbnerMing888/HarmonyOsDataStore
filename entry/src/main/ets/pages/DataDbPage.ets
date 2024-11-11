@@ -37,11 +37,23 @@ struct DataDbPage {
           .executeSql("CREATE TABLE abner_ta(id INTEGER PRIMARY KEY AUTOINCREMENT,name VARCHAR(50),age INT)")
         break;
       case 1: //存储
+
         const valueBucket1: ValuesBucket = {
           'name': "AbnerMing",
           'age': 18,
         };
         DbUtil.getInstance().insert("abner_ta", valueBucket1)
+
+        // const valueBucket1: ValuesBucket = {
+        //   'name': "value1",
+        //   'age': 20
+        // };
+        // const valueBucket2: ValuesBucket = {
+        //   'name': "value2",
+        //   'age': 21
+        // };
+        //
+        // DbUtil.getInstance().batchInsert("abner_ta", [valueBucket1, valueBucket2])
         break;
       case 2: //获取
 
@@ -53,7 +65,7 @@ struct DataDbPage {
             const id = resultSet.getLong(resultSet.getColumnIndex("id"));
             const name = resultSet.getString(resultSet.getColumnIndex("name"));
             const age = resultSet.getLong(resultSet.getColumnIndex("age"));
-            console.log("=========" + name)
+            console.log(id + "=========" + name)
           }
         })
 
