@@ -427,7 +427,7 @@ DataPreferences.getInstance()
 建议在AbilityStage里进行初始化，如果你要使用多个文件实例进行存储，可以传递第二个参数。
 
 ```typescript
-DataKvUtil.getInstance().init(this.context, "com.gwm.tool")
+DataKvUtil.getInstance().init(this.context, "com.abner.tool")
 ```
 
 #### 相关属性介绍
