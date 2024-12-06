@@ -9,7 +9,7 @@ export default class App extends AbilityStage {
       .initSuccess(() => {
         console.log("===========初始化成功")
       })
-      .init(this.context, "com.gwm.tool")
+      .init(this.context, "com.abner.tool")
 
     //初始化关系型数据库
     DbUtil.getInstance().init(this.context)
