@@ -12,11 +12,11 @@ HarmonyOsDataStore是一个用于数据存储的工具库，支持用户首选�
 
 ## 开发环境
 
-DevEco Studio NEXT Developer Beta1,Build Version: 5.0.3.200
+DevEco Studio NEXT Developer Beta1,Build Version: 5.0.3.900
 
-Api版本：**11**
+Api版本：**12**
 
-hvigorVersion：4.2.0
+hvigorVersion：5.0.0
 
 ## 快速使用
 
@@ -35,7 +35,7 @@ ohpm install @abner/datastore
 方式二：在工程的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/datastore": "^1.0.3"}
+"dependencies": { "@abner/datastore": "^1.0.4"}
 ```
 
 <p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/datastore/datastore_001.png" width="300"></p>
